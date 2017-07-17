@@ -31,17 +31,15 @@ import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
 import studio.ibeacon.client.R;
 import studio.ibeacon.client.adapter.ProductAdapter;
 import studio.ibeacon.client.app.ClientApplication;
-import studio.ibeacon.client.data.Product;
-import studio.ibeacon.client.event.ProductEvent;
 import studio.ibeacon.library.Configs;
+import studio.ibeacon.library.data.Product;
 import studio.ibeacon.library.event.MessageEvent;
+import studio.ibeacon.library.event.ProductEvent;
 import studio.ibeacon.library.utils.PriceUtil;
 import studio.ibeacon.library.utils.ToastUtil;
 
 
 public class ProductsFragment extends Fragment {
-
-
     private RecyclerView mRecyclerView;
     private TextView mPrice, mNumber;
     private ViewGroup mPriceLayout;

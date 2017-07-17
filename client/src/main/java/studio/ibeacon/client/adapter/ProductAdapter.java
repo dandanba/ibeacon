@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
 import studio.ibeacon.client.R;
-import studio.ibeacon.client.data.Product;
+import studio.ibeacon.library.data.Product;
 import studio.ibeacon.library.utils.PriceUtil;
 
 

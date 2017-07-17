@@ -1,8 +1,9 @@
-package studio.ibeacon.server.event;
+package studio.ibeacon.library.event;
 
 import java.util.List;
 
-import studio.ibeacon.server.data.Product;
+import studio.ibeacon.library.data.Product;
+
 
 /**
  * Created by wanggeng on 2017/7/14.

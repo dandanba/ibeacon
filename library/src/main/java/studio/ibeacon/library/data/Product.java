@@ -2,6 +2,7 @@ package studio.ibeacon.library.data;
 
 import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.im.v2.AVIMConversation;
 
 /**
  * Created by wanggeng on 2017/7/13.
@@ -10,6 +11,11 @@ import com.avos.avoscloud.AVObject;
 public class Product extends AVObject {
 
     // -------------------- 数据库数据 开始 --------------------------
+
+    // -------------------- 数据库数据 结束 --------------------------
+    public int number;
+    public int type;
+    public AVIMConversation conversation;
 
     public String getpName() {
         return getString("pName");
@@ -59,4 +65,7 @@ public class Product extends AVObject {
         put("company", company);
     }
 
+    public int getPrice() {
+        return getpPrice() == null ? 0 : Integer.parseInt(getpPrice()) * number;
+    }
 }

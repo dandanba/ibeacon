@@ -20,11 +20,11 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import cn.bingoogolapple.androidcommon.adapter.BGADivider;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
+import studio.ibeacon.library.data.Product;
+import studio.ibeacon.library.event.ProductEvent;
 import studio.ibeacon.library.utils.ToastUtil;
 import studio.ibeacon.server.R;
 import studio.ibeacon.server.adapter.ProductAdapter;
-import studio.ibeacon.server.data.Product;
-import studio.ibeacon.server.event.ProductEvent;
 
 
 public class ProductsFragment extends Fragment {
