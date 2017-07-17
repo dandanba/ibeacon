@@ -1,2 +1,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="studio.ibeacon.library" />
+    package="studio.ibeacon.library">
+
+    <!--&lt;!&ndash; 基础模块（必须加入以下声明）START &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--&lt;!&ndash; 基础模块 END &ndash;&gt;-->
+    <!--<application android:name=".app.CommonApplication">-->
+        <!--&lt;!&ndash; 实时通信模块、推送（均需要加入以下声明） START &ndash;&gt;-->
+        <!--&lt;!&ndash; 实时通信模块、推送都要使用 PushService &ndash;&gt;-->
+        <!--<service android:name="com.avos.avoscloud.PushService" />-->
+        <!--<receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+                <!--<action android:name="android.intent.action.USER_PRESENT" />-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; 实时通信模块、推送 END &ndash;&gt;-->
+    <!--</application>-->
+</manifest>
