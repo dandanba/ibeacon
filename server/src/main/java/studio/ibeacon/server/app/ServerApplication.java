@@ -24,6 +24,7 @@ public class ServerApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         AVIMClient.getInstance(Configs.product()).open(null);
+
         sInstance = this;
     }
 

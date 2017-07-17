@@ -25,26 +25,7 @@ public class ClientApplication extends BaseApplication {
     private AVIMConversation mConversation;
     private String mUserId;
     private String mConversationId;
-
-
-    public static ClientApplication getInstance() {
-        return sInstance;
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        mConversationId = PreferenceUtil.getString(this, "conversation_id");
-        mUserId = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
-
-        AVIMClient.getInstance(mUserId).open(new CreateConversationCallback());
-
-        sInstance = this;
-    }
-
-    public class CreateConversationCallback extends AVIMClientCallback {
-
+    private final AVIMClientCallback mAVIMClientCallback = new AVIMClientCallback() {
         @Override
         public void done(AVIMClient client, AVIMException e) {
             if (e == null) {
@@ -66,8 +47,23 @@ public class ClientApplication extends BaseApplication {
                 }
             }
         }
+    };
+
+    public static ClientApplication getInstance() {
+        return sInstance;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        mConversationId = PreferenceUtil.getString(this, "conversation_id");
+        mUserId = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        AVIMClient.getInstance(mUserId).open(mAVIMClientCallback);
+
+        sInstance = this;
+    }
 
     public AVIMConversation getConversation() {
         return mConversation;

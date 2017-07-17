@@ -21,6 +21,5 @@ public class MainActivity extends BaseActivity {
         title.setText(Configs.product());
 
         FragmentUtil.replaceFragment(this, R.id.container, ProductsFragment.newInstance());
-
     }
 }
