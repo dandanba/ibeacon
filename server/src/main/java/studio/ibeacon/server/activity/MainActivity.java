@@ -22,13 +22,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
         FragmentUtil.replaceFragment(this, R.id.container, ProductsFragment.newInstance());
         update();
     }
-
 
     private void update() {
         AVQuery<Product> query = AVObject.getQuery(Product.class);

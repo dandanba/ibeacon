@@ -18,13 +18,17 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.bingoogolapple.androidcommon.adapter.BGADivider;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
 import studio.ibeacon.library.data.Product;
-import studio.ibeacon.library.event.ProductEvent;
+import studio.ibeacon.library.event.MessageEvent;
 import studio.ibeacon.library.utils.ToastUtil;
 import studio.ibeacon.server.R;
 import studio.ibeacon.server.adapter.ProductAdapter;
+import studio.ibeacon.server.app.ServerApplication;
 
 
 public class ProductsFragment extends Fragment {
@@ -105,8 +109,53 @@ public class ProductsFragment extends Fragment {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onProductEvent(ProductEvent event) {
-        mProductAdapter.addMoreData(event.data);
+    public void onMessageEvent(MessageEvent event) {
+        final String text = event.text;
+
+        final String[] sa = text.split(";");
+        final int size = sa.length;
+        final List<Product> results = new ArrayList<>();
+
+        final Product head = new Product();
+        head.type = -1;
+        head.conversation = event.conversation;
+        results.add(head);
+
+        // ---------- body start ----------
+        int number;
+        String objectId;
+        String[] is;
+        for (int i = 0; i < size; i++) {
+            is = sa[i].split(":");
+
+            objectId = is[0];
+            number = Integer.parseInt(is[1]);
+
+            Product product = getProduct(objectId);
+            product.number = number;
+
+            results.add(product);
+        }
+        // ---------- body end ----------
+
+        final Product foot = new Product();
+        foot.type = 1;
+        results.add(foot);
+
+        mProductAdapter.addMoreData(results);
+    }
+
+    private Product getProduct(String objectId) {
+        List<Product> mProducts = ServerApplication.getInstance().getProducts();
+        int size = mProducts.size();
+        Product product;
+        for (int i = 0; i < size; i++) {
+            product = mProducts.get(i);
+            if (objectId.equals(product.getObjectId())) {
+                return product;
+            }
+        }
+        return null;
     }
 
     private void initView(View view) {
@@ -118,6 +167,5 @@ public class ProductsFragment extends Fragment {
         mProductAdapter.setOnItemChildClickListener(mItemChildClickListener);
         mRecyclerView.setAdapter(mProductAdapter);
     }
-
 
 }

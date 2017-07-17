@@ -1,9 +1,11 @@
 package studio.ibeacon.library.event;
 
-public class MessageEvent {
-    public String data;
+import com.avos.avoscloud.im.v2.AVIMConversation;
 
-    public MessageEvent(String data) {
-        this.data = data;
+public class MessageEvent {
+    public String text;
+    public AVIMConversation conversation;
+
+    public MessageEvent() {
     }
 }

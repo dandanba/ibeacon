@@ -131,8 +131,8 @@ public class ProductsFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(MessageEvent event) {
-        Log.i(Configs.TAG, event.data);
-        ToastUtil.show(getContext(), event.data);
+        Log.i(Configs.TAG, event.text);
+        ToastUtil.show(getContext(), event.text);
     }
 
     private void initView(View view) {

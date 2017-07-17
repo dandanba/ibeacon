@@ -1,7 +1,10 @@
 package studio.ibeacon.server.app;
 
+import com.avos.avoscloud.im.v2.AVIMClient;
+
 import java.util.List;
 
+import studio.ibeacon.library.Configs;
 import studio.ibeacon.library.app.BaseApplication;
 import studio.ibeacon.library.data.Product;
 
@@ -20,15 +23,15 @@ public class ServerApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        AVIMClient.getInstance(Configs.product()).open(null);
         sInstance = this;
-    }
-
-    public void setProducts(List<Product> products) {
-        mProducts = products;
     }
 
     public List<Product> getProducts() {
         return mProducts;
+    }
+
+    public void setProducts(List<Product> products) {
+        mProducts = products;
     }
 }

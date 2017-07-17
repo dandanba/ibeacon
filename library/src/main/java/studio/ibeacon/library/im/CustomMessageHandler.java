@@ -20,7 +20,10 @@ public class CustomMessageHandler extends AVIMMessageHandler {
     public void onMessage(AVIMMessage message, AVIMConversation conversation, AVIMClient client) {
         Log.i(Configs.TAG, "onMessage");
         if (message instanceof AVIMTextMessage) {
-            EventBus.getDefault().post(new MessageEvent(((AVIMTextMessage) message).getText()));
+            final MessageEvent event = new MessageEvent();
+            event.text = ((AVIMTextMessage) message).getText();
+            event.conversation = conversation;
+            EventBus.getDefault().post(event);
         }
     }
 
