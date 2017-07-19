@@ -10,12 +10,11 @@ import com.avos.avoscloud.im.v2.AVIMConversation;
 @AVClassName("Product")
 public class Product extends AVObject {
 
-    // -------------------- 数据库数据 开始 --------------------------
 
-    // -------------------- 数据库数据 结束 --------------------------
     public int number;
     public int type;
     public AVIMConversation conversation;
+    // -------------------- 数据库数据 开始 --------------------------
 
     public String getpName() {
         return getString("pName");
@@ -65,6 +64,7 @@ public class Product extends AVObject {
         put("company", company);
     }
 
+    // -------------------- 数据库数据 结束 --------------------------
     public int getPrice() {
         return getpPrice() == null ? 0 : Integer.parseInt(getpPrice()) * number;
     }

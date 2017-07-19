@@ -12,10 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.FindCallback;
 import com.avos.avoscloud.im.v2.AVIMException;
 import com.avos.avoscloud.im.v2.callback.AVIMConversationCallback;
 import com.avos.avoscloud.im.v2.messages.AVIMTextMessage;
@@ -108,7 +104,7 @@ public class ProductsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         initView(view);
-        update();
+        mProductAdapter.setData(ClientApplication.getInstance().getProducts());
     }
 
     @Override
@@ -187,18 +183,5 @@ public class ProductsFragment extends Fragment {
             }
         }
         return sb.toString();
-    }
-
-    private void update() {
-        AVQuery<Product> query = AVObject.getQuery(Product.class);
-        query.whereEqualTo("company", Configs.product());
-        query.findInBackground(new FindCallback<Product>() {
-            @Override
-            public void done(List<Product> results, AVException e) {
-                if (e == null) {
-                    EventBus.getDefault().post(new ProductEvent(results));
-                }
-            }
-        });
     }
 }
