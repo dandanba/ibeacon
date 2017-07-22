@@ -15,9 +15,22 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+    signingConfigs {
+        maitian {
+            keyAlias 'damai'
+            keyPassword 'damai123456'
+            storeFile file('../damai.jks')
+            storePassword 'damai123456'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            debuggable false
+            signingConfig signingConfigs.maitian
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

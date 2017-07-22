@@ -66,6 +66,8 @@ public class BaseApplication extends MultiDexApplication {
     }
 
     public void updateData() {
+        updateProductTypes();
+        updateProducts();
     }
 
     public void updateProductTypes() {
