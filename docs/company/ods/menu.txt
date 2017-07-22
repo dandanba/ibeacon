@@ -1,0 +1,43 @@
+咖啡店菜单	ODS Coffee Menu
+
+意式咖啡Coffee（热/冷HOT/ICE）                       杯
+意式浓缩Espresso                                      18
+美式Americano                                         22
+拿铁Latte                                             30
+香草拿铁Vanilla Latte                                 30
+榛果拿铁Hazelnut Latte                                30
+卡布奇诺Cappuccino                                    30
+摩卡Mocha                                             30
+焦糖玛奇朵Caramel Macchiato                           30
+
+
+冰茶Iced Tea                                          杯
+石榴蔓越莓 Pomegranate Cranberry                       35
+白桃乌龙 White Peach Oolong                        	   35
+桂花乌龙 Osmanthus Oolong                              35
+日月潭红茶 Riyuetan Pool tea                           35
+热带果味红茶 Tropical fruit tea                        35
+
+茶 Tea
+甘菊黑美人    Camomile beauty  							35
+阿里山珠露 Ali Mountain Quan Yin                        35
+玫瑰铁观音 Rose Tieguanyin                   			35
+
+气泡水 Sparkling Water                        杯
+奇异果 Kiwi fruit                            30
+红石榴 Red pomegranate                       30
+樱桃 Cherry                                  30
+
+奶昔 Milkshake
+草莓 Strawberry                              35
+焦糖 Caramel                                 35
+时令鲜榨果汁 Fresh Juice                     30
+
+希腊手工酸奶 Greek handmade yogurt          杯
+至尊酸奶酪Fruit yogurt                       40
+水果酸奶酪 Fruit yogurt                      35/20  
+原味酸奶酪Yogurt                             28/16
+
+华夫饼 Waffles
+原味  Original                              35
+焦糖  Caramel                               35
